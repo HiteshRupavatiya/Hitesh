@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types Of Javascript and Its Scope</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        var message = "hello world!";
+        let carName = "Volvo Xc60";
+        let carName1 = 'Volvo Xc60';
+        let answer1 = "It's Alright";
+        let answer2 = "He is Called 'abc'";
+        let answer3 = 'He is called "abc"';
+        let x,y; // initial value should be undefined
+        const numbers = [10,20,30,40,50]
+        const obj1 = {firstname : "abc",lastname : "xyz",age : 30};
+        const date = new Date();
+        x = true;
+        y = true;
+        const pi = 3.14;
+        const no1 = 20 , no2 = 10;
+        let z = no1 + no2;
+        let no3 = BigInt("5667347568656745645656788");
+
+        {
+            let x = false; // let variable x can be reinitialized in scope
+            console.log(x);
+            console.log(date);
+            document.write(x);
+            document.write("<br>");
+            document.write(" "+obj1.firstname);
+            document.write(" "+obj1.lastname);
+            document.write(" "+obj1.age);
+        }
+
+        {
+            const numbers = [10,20,30]; // const variable can be reinitialized in scope
+            console.log(typeof numbers);
+            console.log(typeof no3);
+            console.log(typeof obj1);
+            console.log(answer1,answer2,answer3);
+        }
+
+        // const numbers = [10,20]; // the const variable cannot be reinitialized
+        document.write("<br>"+ x);
+        document.write("<br>"+ message);
+        document.write("<br>"+ y);
+        document.write("<br>"+ numbers);
+        document.write("<br>"+ z);
+        document.getElementById('demo').innerHTML = message;
+
+    </script>
+
+</body>
+</html>

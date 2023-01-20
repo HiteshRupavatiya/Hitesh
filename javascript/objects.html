@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects Of Javascript</title>
+</head>
+<body>
+    <script>
+        const car = {type : "Fiat",model : "500",color : "White"};
+        console.log(car);
+        document.write("Car Name Is :" + car.type + " Car Model Is :" + car.model + " Car Color Is :" + car.color + "<br>");
+
+        const person = {
+            firstname : "abc",
+            lastname : "xyz",
+            age : 20,
+            eyeColor : "Blue",
+            fullname : function(){
+                return this.firstname + " " + this.lastname;
+            }
+        };
+        console.log(person);
+        document.write("Person Firstname Is :" + person.firstname + " Person Lastname Is :" + person.lastname + " Eye Color Is :" + person.eyeColor);
+        console.log(person['firstname']);
+        console.log(person['lastname']);
+        console.log(person['eyeColor']);
+        
+        var name = person.fullname();
+        var name1 = person.fullname;
+        console.log(name);
+        console.log(name1);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  } */
+
+  h1,h2,h3,h4,h5,h6{
+    padding: 30px;
+  }
+  table{
+    border: 5px;
+    border-radius: 5px;
+  }
+  tr td{
+    padding: 5px;
+    border-radius: 7px;
+  }
+  .clearfix {
+    clear: both;
+  }
+  nav{
+    background-color: grey;
+    height: 59px;
+  }
+  nav ul li{
+    display: inline-block;
+    margin-top: 20px;
+    align-items:flex-start;
+    float: left;
+  }
+  nav ul li a{
+    text-decoration: none;
+    font-size: 14px;
+    color: whitesmoke;
+    padding: 20px;
+    text-align: center;
+  }
+  nav ul li a:hover{
+    background-color: brown;
+  }
+  

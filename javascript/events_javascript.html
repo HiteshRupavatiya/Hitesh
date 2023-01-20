@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Of Javascript</title>
+</head>
+<body onload="window.alert('Page Successfully Loaded');">
+    <h1>Events Example</h1>
+    <button type="button" onclick="clickEvent()">Click Here</button>
+    <button type="button" onmouseover="mouseOverEvent()">Put Cursor Here</button>
+    <br>
+    <input type="text" name="text" id="text" onfocus="focusEvent()">
+    <br>
+    <input type="text" name="text" id="text1" onkeydown="onKeyDownEvent()">
+    <script>
+        function clickEvent(){
+            document.write("Click Event Called...");
+        }
+
+        function mouseOverEvent(){
+            document.write("Mouse Over Event Called...");
+        }
+
+        function focusEvent(){
+            document.getElementById('text').style.background = "aqua";
+        }
+
+        function onKeyDownEvent(){
+            document.getElementById("text1");
+            alert("Key Pressed...");
+        }
+
+    </script>
+
+</body>
+</html>
