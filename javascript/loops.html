@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Loops With Example</title>
+</head>
+<body>
+    <script>
+        const cars = ["Volvo","BMW","Ford","Creata"];
+        for (let index = 0; index < cars.length; index++) {
+            document.write(cars[index] + ", ");
+        }
+
+        document.write("<br>");
+        const person = {firstName : "abc",lastName : "xyz",age : 25};
+
+        for(let x in person){
+            document.write(person[x] + ", ");
+        }
+
+        const numbers = [45,4,9,16,25];
+        
+        let text = "";
+
+        numbers.forEach(myFunction);
+
+        document.write("<br>" + text);
+
+        function myFunction(value,index,array){
+            text += value + ", ";
+        }
+
+        for (const iterator of cars) {
+            console.log(iterator);
+        }
+
+        let i = 1;
+        while(i <= 10){
+            console.log(i);
+            i++;
+        }
+
+        let j = 1;
+        do {
+            console.log(j);
+            j++;
+        } while (j <= 10);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Object With Example</title>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <input type="button" value="Load New Document" onclick="newDoc()" />
+    <br />
+    <input type="button" value="Back To Previous" onclick="goBack()" />
+    <br />
+    <input type="button" value="Go To Next" onclick="goForward()" />
+    <br>
+    <input type="button" value="Click To Open Alert" onclick="generatePopUp()">
+    <br>
+    <input type="button" value="Click To Open Confirm Box" onclick="generateConfirm()">
+    <br>
+    <input type="button" value="Click To Open Prompt Box" onclick="generatePrompt()">
+    <script>
+      function newDoc() {
+        window.location.assign("www.google.com");
+      }
+
+      function goBack() {
+        window.history.back();
+      }
+
+      function goForward() {
+        window.history.forward();
+      }
+
+      function generatePopUp(){
+        alert("Hello There");
+      }
+
+      function generateConfirm(){
+        confirm("Are You Sure...");
+      }
+
+      function generatePrompt(){
+        let name = prompt("Enter Your Name : ");
+        alert(name);
+      }
+
+      window.document.getElementById("header");
+
+      document.write(
+        "<br>" + "Browser Screen Height : " + window.innerHeight + "<br>"
+      );
+      document.write("Browser Screen Width : " + window.innerWidth + "<br>");
+
+      document.write("Screen Width : " + screen.width + "<br>");
+      document.write("Screen Height : " + screen.height + "<br>");
+
+      document.write("Available Screen Width : " + screen.availWidth + "<br>");
+      document.write(
+        "Available Screen Height : " + screen.availHeight + "<br>"
+      );
+
+      document.write("Color Depth : " + screen.colorDepth + "<br>");
+      document.write("Screen Pixel Depth : " + screen.pixelDepth + "<br>");
+
+      document.write("Page Location Is : " + location.href + "<br>");
+      document.write("Hostname Is : " + location.hostname + "<br>");
+
+      document.write("Page Path Is : " + location.pathname + "<br>");
+      document.write("Page Protocol Is : " + location.protocol + "<br>");
+
+      document.write("Port Number Is : " + location.port + "<br>");
+      document.getElementById("demo").innerHTML =
+        "Cookies Are Enabled : " + navigator.cookieEnabled;
+
+      document.getElementById("demo1").innerHTML = "App Name : " + navigator.appName;
+      document.getElementById("demo2").innerHTML = "App Code Name : " + navigator.appCodeName;
+
+      document.write("Product Name : " + navigator.product + "<br>");
+      document.write("Browser Version : " + navigator.appVersion + "<br>");
+
+      document.write("UserAgent Name : " + navigator.userAgent + "<br>");
+      document.write("Platform Name : " + navigator.platform + "<br>");
+
+      document.write("Browser Language : " + navigator.language + "<br>");
+      document.write("Brower Is Online : " + navigator.onLine + "<br>");
+
+      document.write("Browser is Java Enabled : " + navigator.javaEnabled() + "<br>");
+
+    </script>
+  </body>
+</html>
