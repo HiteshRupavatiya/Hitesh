@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Example</title>
+</head>
+<body>
+    <button type="button" onclick="loadContent()" >Change Content</button>
+    <button type="button" onclick="loadXmlContent()">Load Xml Content</button>
+    <button type="button" onclick="getHeaders()">Get Headers</button>
+    <button type="button" onclick="getResponceHeaders()">Get Response Header</button>
+    <br><br>
+    <p>Start typing a name in the input field below:</p>
+    <p>Suggestions: <span id="txtHint"></span></p>
+    <form>
+        Enter Text : <input type="text" name="" id="">
+        <br>
+        <input type="button" value="Search" onclick="showHint(value)">
+    </form>
+    <br>
+    <p id="demo"></p>
+    <script>
+        function getHeaders(){
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onload = function(){
+                document.write(this.getAllResponseHeaders());
+            }
+
+            xhttp.open("GET","/AJAX_Practice/ajax_info.txt")
+            xhttp.send();
+        }
+
+        function getResponceHeaders(){
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onload = function(){
+                document.write(this.getResponseHeader("Last-MODIFIED"));
+            }
+
+            xhttp.open("GET","/AJAX_Practice/ajax_info.txt")
+            xhttp.send();
+        }
+
+        function loadXmlContent(){
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onload = function(){
+                const xmlDoc = this.responseXML;
+                const x = xmlDoc.getElementsByTagName("ARTIST");
+                let text = "";
+                for(let i = 0;i<x.length;i++){
+                    text += x[i].childNodes[0].nodeValue + "<br>";
+                }
+                document.write(text + "<br>");
+            }
+            xhttp.open("GET","/AJAX_Practice/catalog.xml");
+            xhttp.send();
+        }
+
+        function loadContent(){       
+            const xhttp = new XMLHttpRequest(); 
+
+            // xhttp.onload = function(){
+            //     document.getElementById("demo").innerHTML = this.responseText;
+            // }
+
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    document.getElementById("demo").innerHTML = xhttp.responseText;
+                }
+            }
+
+            xhttp.open("GET","/AJAX_Practice/ajax_info.txt",true);
+            xhttp.send();
+        }
+
+        function showHint(str){
+            if(str.length == 0){
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            else{
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function(){
+                    document.getElementById("txtHint").innerHTML = this.responseText;
+                }
+                xhttp.open("GET","gethint.php?q=" + str);
+                xhttp.send();
+            }
+        }
+
+    </script>
+</body>
+</html>
