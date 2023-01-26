@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Example With Its Methods</title>
+</head>
+<body>
+    <script>
+        const obj = {name : "abc",age : 20,city : "New York"};
+        document.write(obj.name + " " + obj.city + " " + obj["age"]);
+
+        const obj1 = JSON.parse('{"name" : "John","age" : 30,"city" : "New York"}');
+
+        document.write("<br>" + obj1.age + " " + obj1.name + " " + obj1.city);
+
+        const text = '["Ford","BMW","Audi","Fiat"]';
+        const myArr = JSON.parse(text);
+
+        document.write("<br>" + myArr);
+
+        const text1 = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+        const obj2 = JSON.parse(text1);
+
+        obj2.birth = new Date(obj2.birth);
+
+        document.write("<br>" + obj2.name + " , " + obj2.birth);
+
+        const text2 = '{"name":"John", "age":"function () {return 30;}", "city":"New York"}';
+        const obj3 = JSON.parse(text2);
+
+        obj3.age = eval("(" + obj3.age + ")");
+
+        document.write("<br>" + obj3.name + " " + obj3.age());
+        
+        const obj4 = {name: "John", age: 30, city: "New York"};
+
+        console.log(JSON.stringify(obj4));
+        document.write("<br>" + JSON.stringify(obj4));
+
+        const arr = ["abc","xyz","nmo","dfg"];
+
+        console.log(JSON.stringify(arr));
+        document.write("<br>" + JSON.stringify(arr));
+
+        localStorage.setItem("testJSON",JSON.stringify(arr));
+
+    </script>
+</body>
+</html>
