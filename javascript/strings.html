@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript String Example</title>
+</head>
+<body>
+    <script>
+        let text = "hello world!";
+        let carName = "Ford";
+        let text1 = "He is called 'abc'";
+        let text2 = "He is called 'abc1'";
+        let message = "We are the so-called \"Vikings\" from the North.";
+        console.log(message);
+        document.write(message + "<br>");
+
+        let text3 = 'It\'s alright';
+        console.log(text3);
+        document.write(text3 + "<br>");
+
+        let text4 = "The character \\ is called backslash";
+        console.log(text4);
+        document.write(text4 + "<br>");
+
+        let x = "abc";
+        let y = new String("abc");
+        document.write((x == y) + "<br>");
+        document.write(x === y);
+        console.log(message.length);
+        document.write("<br>" + message.length);
+
+        let str1 = "Apple, Bannana, Kiwi";
+        console.log(str1.slice(7,13));
+        document.write("<br>" + str1.slice(7,13));
+        document.write("<br>" + str1.slice(7));
+        document.write("<br>" + str1.slice(-12));
+        document.write("<br>" + str1.slice(-12,-6));
+        document.write("<br>" + str1.substring(7,13));
+        document.write("<br>" + str1.substr(7,6));
+        document.write("<br>" + str1.slice(7));
+        
+        let message1 = "Please visit Microsoft and Microsoft!";
+        document.write("<br>" + message1.replace(/MICROSOFT/gi,"JavatPoint"));
+        document.write("<br>" + message1.replaceAll(/MICROSOFT/gi,"W3schools"));
+        document.write("<br>" + text.toLowerCase());
+        document.write("<br>" + text.toUpperCase());
+        document.write("<br>" + text.concat(carName));
+
+        var text5 = "      Hello World!       ";
+        document.write("<br>" + text5.trim());
+        document.write("<br>" + text5.trimStart());
+        document.write("<br>" + text5.trimEnd());
+
+        var noText = "5"
+        document.write("<br>" + noText.padStart(4,"x"));
+        document.write("<br>" + noText.padEnd(4,"x"));
+
+        document.write("<br>" + text.charAt(0));
+        document.write("<br>" + text.charCodeAt(0));
+        document.write("<br>" + text.split(","));
+        document.write("<br>" + text.split(" "));
+        document.write("<br>" + text.split("|"));
+
+        let str2 = "Please locate where 'locate' occurs!";
+        document.write("<br>" + str2.indexOf("locate"));
+        document.write("<br>" + str2.lastIndexOf("locate"));
+        document.write("<br>" + str2.search("locate"));
+        document.write("<br>" + str2.search(/locate/));
+
+        let text6 = "The rain in SPAIN stays mainly in the plain";
+        document.write("<br>" + text6.match("ain"));
+        document.write("<br>" + text6.match(/ain/));
+        document.write("<br>" + text6.match(/ain/gi));
+
+        let str3 = "I love cats. Cats are very easy to love. Cats are very popular."
+        var iterator = text6.matchAll(/Cats/gi);
+        document.write("<br>" + iterator);
+
+        let str4 = "Hello world, welcome to the universe.";
+        document.write("<br>" + str4.includes("world"));
+        document.write("<br>" + str4.includes("world",12));
+
+        document.write("<br>" + text.startsWith("hello"));
+        document.write("<br>" + text.endsWith("world!"));
+
+        let msg = `Hello World!`;
+        let msg1 = `He's often called "abc"`;
+        let msg2 = 
+        `The quick
+        brown fox
+        jumps over
+        the lazy dog`;
+        console.log(msg,msg1,msg2);
+
+        let firstName = "abc";
+        let lastName = "xyz";
+
+        let fullName = `Welcome ${firstName}, ${lastName}!`;
+        console.log(fullName);
+
+        let header = "Templates Literals";
+        let tags = ["template literals","javascript","es6"];
+
+        let display = `<h2>${header}<h2><ul>`;
+            for(const x of tags){
+                display += `<li>${x}</li>`;
+            }
+        display += `</ul>`;
+        document.write("<br>" + display);
+
+    </script>
+
+</body>
+</html>

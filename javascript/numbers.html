@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Numbers With Its Functions Example</title>
+</head>
+<body>
+    <script>
+        let x = 123e5;
+        let y = 123e-5;
+        let z = 3.14;
+        let w = 3;
+
+        let bigInteger = 999999999999999;
+
+        x = 100 / "Apple";
+        x = NaN;
+        console.log(x);
+        document.write(isNaN(x));
+        document.write("<br>" + typeof x);
+
+        let number = 2;
+        while(number != Infinity){
+            number *= number;
+        }
+        console.log(number); // NaN
+        document.write("<br>" + typeof number); // number
+        console.log(typeof Infinity); // number
+        
+        console.log(-2/0); // Infinity
+        console.log(2/0); // Infinity
+
+        let hexCode = 0xFF;
+        console.log(hexCode);
+        document.write("<br>" + hexCode);
+
+        x = 32;
+        document.write("<br><br>" + x.toString(32));
+        document.write("<br>" + x.toString(16));
+        document.write("<br>" + x.toString(12));
+        document.write("<br>" + x.toString(10));
+        document.write("<br>" + x.toString(12));
+        document.write("<br>" + x.toString(8));
+        document.write("<br>" + x.toString(2));
+
+        x = 123;
+        let no1 = new Number(123);
+
+        document.write("<br><br>" + (x == no1));
+        document.write("<br>" + (x === no1));
+
+        let bigInteger1 = BigInt(1234567890123456789012345);
+        console.log(typeof bigInteger1);
+        
+        let hex = 0x20000000000003n;
+        let oct = 0o400000000000000003n;
+        let bin = 0b100000000000000000000000000000000000000000000000000011n;
+
+        console.log(Number.MAX_SAFE_INTEGER,Number.MIN_SAFE_INTEGER);
+
+        document.write("<br><br>" + Number.isInteger(10));
+        document.write("<br>" + Number.isInteger(10.5));
+        
+        document.write("<br><br>" + Number.isSafeInteger(10));
+        document.write("<br>" + Number.isSafeInteger(12345678901234567890));
+
+        x = 123;
+        console.log(x.toString()); // 123
+
+        console.log(x.toExponential(2)); // 1.23e+2
+        console.log(x.toExponential(4)); // 1.2300e+2
+
+        x = 9.656;
+        console.log(x.toFixed(0)); // 10
+        console.log(x.toFixed(2)); // 9.66
+        console.log(x.toFixed(4)); // 9.656 
+        console.log(x.toFixed(6)); // 9.656000
+
+        console.log(x.toPrecision()); // 9.656
+        console.log(x.toPrecision(2)); // 9.7
+        console.log(x.toPrecision(4)); // 9.656
+        console.log(x.toPrecision(6)); // 9.65600
+        
+        x = 123
+        console.log(x.valueOf()); // 123
+
+        document.write("<br><br>" + Number(true));
+        document.write("<br>" + Number(false));
+        document.write("<br>" + Number("10"));
+        document.write("<br>" + Number(" 10"));
+        document.write("<br>" + Number("10 "));
+        document.write("<br>" + Number(" 10 "));
+        document.write("<br>" + Number("10.33"));
+        document.write("<br>" + Number("10,33")); // NaN
+        document.write("<br>" + Number("10 33")); // NaN
+        document.write("<br>" + Number("John")); // NaN
+
+        document.write("<br><br>" + parseInt("-10"));
+        document.write("<br>" + parseInt("-10.33"));
+        document.write("<br>" + parseInt("10"));
+        document.write("<br>" + parseInt("10.33"));
+        document.write("<br>" + parseInt("10 20 30"));
+        document.write("<br>" + parseInt("10 Years"));
+        document.write("<br>" + parseInt("Years 10"));
+
+        document.write("<br><br>" + parseFloat("10"));
+        document.write("<br>" + parseFloat("10.33"));
+        document.write("<br>" + parseFloat("10 20 30"));
+        document.write("<br>" + parseFloat("10 Years"));
+        document.write("<br>" + parseFloat("Years 10"));
+
+        console.log(Number.EPSILON); // 2.220446049250313e-16
+        console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
+        console.log(Number.MIN_VALUE); // 5e-324
+        console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+        console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
+        console.log(Number.NEGATIVE_INFINITY); // -Infinity
+        console.log(Number.POSITIVE_INFINITY); // Infinity
+        console.log(Number.NaN); // NaN
+
+    </script>
+</body>
+</html>

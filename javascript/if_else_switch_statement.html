@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript If Else And Switch Statement With Example</title>
+</head>
+<body>
+    <script>
+        let hour = 19;
+        if(hour < 10){
+            document.write("Good Morning");
+        }
+        else if(hour < 20){
+            document.write("Good Day")
+        }
+        else{
+            document.write("Good Evening");
+        }
+
+        switch(new Date().getDay()){
+            case 0:
+                document.write("<br>" + "Sunday");
+                break;
+            case 1:
+                document.write("<br>" + "Monday");
+                break;
+            case 2:
+                document.write("<br>" + "Tuesday");
+                break;
+            case 3:
+                document.write("<br>" + "Wedneday");
+                break;
+            case 4:
+                document.write("<br>" + "Thursday");
+                break;
+            case 5:
+                document.write("<br>" + "Friday");
+                break;
+            case 6:
+                document.write("<br>" + "Saturday");
+                break;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Arrays With Its Operations Example</title>
+</head>
+<body>
+    <script>
+        const cars = ["Saab","Volvo","BMW"];
+        const cars1 = new Array("Saab","Volvo","BMW");
+
+        console.log(cars,typeof cars);
+        console.log(cars1,typeof cars1);
+
+        const person = {firstName : "abc",lastName : "xyz",age : 20};
+
+        console.log(cars.length,cars1.length);
+
+        console.log(cars.sort(),cars1.sort());
+
+        const fruits = ["Banana","Orange","Apple","Mango"];
+        let flen = fruits.length;
+
+        let text = "<ul>";
+            for(let i=0;i<flen;i++){
+                text += "<li>" + fruits[i] + "</li>";
+            }
+        text += "</ul>";
+        
+        document.write(text + "<br>");
+
+        text = "<ul>";
+            fruits.forEach(myFunction);
+            text += "</ul>";
+
+            function myFunction(value){
+                text += "<li>" + value + "</li>";
+            }
+        
+        document.write(text);
+
+        fruits.push("Lemon");
+        console.log(fruits);
+
+        const points = [40,100,1,5,25,10];
+        // const points = new Array(10,100,1);
+
+        console.log(typeof fruits,fruits instanceof Array);
+
+        document.write(Array.isArray(fruits) + "<br>");
+
+        document.write(fruits.toString() + "<br>");
+
+        document.write(fruits.join("*") + "<br>");
+
+        fruits.pop(); // Lemon removed
+
+        document.write(fruits + "<br>");
+
+        fruits.push("Lemon","Kiwi");
+        
+        document.write(fruits + "<br>");
+
+        fruits.shift(); // Banana removed
+
+        console.log(fruits);
+
+        fruits.unshift("Lemon");
+
+        console.log(fruits);
+
+        // delete fruits[0];
+
+        const arr1 = ["abc","xyz"];
+        const arr2 = ["mno","dfht"];
+        document.write(arr1.concat(arr2));
+        
+        fruits.splice(2,0,"Lemon","Kiwi");
+
+        console.log(fruits);
+
+        fruits.slice(2,2,"Lemon","Kiwi");
+
+        console.log(fruits);
+
+        document.write("<br>" + fruits.sort());
+
+        document.write("<br>" + fruits.reverse());
+
+        points.sort(function(a,b){
+            return a - b; // Ascending Order
+        });
+
+        console.log(points);
+
+        points.sort(function(a,b){
+            return b - a; // Descending Order
+        });
+
+        console.log(points);
+
+        const numbers = [45,4,9,16,25];
+
+        const numbers1 = numbers.map(myFunction);
+
+        document.write("<br>" + numbers1);
+
+        function myFunction(value,index,array){
+            return value * 2;
+        }
+
+        const over18 = numbers.filter(myFunction);
+
+        document.write("<br>" + over18);
+
+        function myFunction(value,index,array){
+            return value > 18;
+        }
+
+        let sum = numbers.reduce(myFunction);
+
+        document.write("<br>" + sum);
+
+        function myFunction(total,value,index,array){
+            return total + value;
+        }
+
+        let sum1 = numbers.reduceRight(myFunction);
+
+        document.write("<br>" + sum1);
+
+        function myFunction(total,value,index,array){
+            return total + value;
+        }
+
+        let allover18 = numbers.every(myFunction);
+
+        document.write("<br>" + allover18);
+
+        function myFunction(value,index,array){
+            return value > 18;
+        }
+
+        let allover181 = numbers.some(myFunction);
+
+        document.write("<br>" + allover181);
+
+        function myFunction(value,index,array){
+            return value > 18;
+        }
+
+        console.log(fruits.indexOf("Orange") + 1);
+
+        console.log(fruits.lastIndexOf("Banana") + 1);
+
+        let first = numbers.find(myFunction);
+
+        document.write("<br>" + first);
+
+        function myFunction(value,index,array){
+            return value > 18;
+        }
+
+        let firstIndex = numbers.findIndex(myFunction);
+
+        document.write("<br>" + firstIndex);
+
+        function myFunction(value,index,array){
+            return value > 18;
+        }        
+
+        console.log(Array.from("ABCDEFG"));
+
+        let keys = fruits.keys();
+
+        for(let x of keys){
+            document.write(" " + x);
+        }
+
+        document.write("<br>");
+
+        let entries = fruits.entries();
+
+        for(let x of entries){
+            document.write(" " + x)
+        }
+
+        console.log(fruits.includes("Apple")); // true
+
+    </script>    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript CallBack Function With Example</title>
+</head>
+<body>
+    <script>
+        function myDisplayer(some){
+            document.write(some);
+        }
+
+        function calculate(num1, num2, myDisplayer){
+            let sum = num1 + num2;
+            myDisplayer(sum);
+        }
+
+        calculate(5,5,myDisplayer);
+
+        document.write("<br>");
+
+        const numbers = [4,1,-20,-7,5,9,-6];
+
+        const positiveNumbers = removeNegative(numbers,(x) => x >= 0);
+
+        document.write(positiveNumbers + ", ");
+
+        function removeNegative(numbers, callBack){
+            const newArray = [];
+            for (const x of numbers) {
+                if(callBack(x)){
+                    newArray.push(x);
+                }
+            }
+            return newArray;
+        }
+        
+    </script>
+</body>
+</html>
