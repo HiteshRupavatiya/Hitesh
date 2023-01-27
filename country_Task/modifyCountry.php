@@ -16,10 +16,12 @@
             header('location:index.php');
         }
         else{
-            echo $result->error;
+            echo $connection->error;
         }
 
     }
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +36,7 @@
     <link rel="stylesheet" href="css/bootstrap-theme.css" />
 </head>
 
-<body style="padding: 15px 10px">
+<body>
 
     <?php
 
@@ -47,6 +49,8 @@
         $result = mysqli_query($connection,$query);
 
         $data = mysqli_fetch_row($result);
+
+        closeDatabaseConnection($connection);
 
     ?>
 

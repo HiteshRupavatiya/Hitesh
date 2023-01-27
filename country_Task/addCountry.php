@@ -17,7 +17,7 @@
             header('location: index.php');
         }
         else{
-            echo "Error";
+            echo $connection->error;
         }
 
         closeDatabaseConnection($connection);

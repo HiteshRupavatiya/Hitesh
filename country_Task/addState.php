@@ -13,7 +13,7 @@
         $result = mysqli_query($connection,$query);
 
         if($result){
-            // header('location: stateIndex.php');
+            header('location: stateIndex.php');
         }
         else{
             echo $connection->error;
