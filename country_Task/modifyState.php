@@ -1,5 +1,5 @@
 <?php
-    $id = $_GET['id'];
+    $id = $_POST['id'];
 
     include('databaseConnection.php');
 
@@ -11,14 +11,6 @@
         $connection = openDatabaseConnection();
 
         $query = "update state set state_name = '$stateName',country_id = $countryId where sid = '$id'";
-
-        if($result = mysqli_query($connection,$query) == true){
-            header('location:stateIndex.php');
-            echo $query;
-        }
-        else{
-            echo $connection->error;
-        }
 
         closeDatabaseConnection($connection);
 
@@ -41,8 +33,6 @@
 <body>
 
     <?php
-
-        $id = $_GET['id'];
         
         $connection = openDatabaseConnection();
 
@@ -51,6 +41,8 @@
         $result = mysqli_query($connection,$query);
 
         $data = mysqli_fetch_row($result);
+
+        json_encode($data);
 
         closeDatabaseConnection($connection);
 
@@ -67,18 +59,16 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="countryName" class="col-sm-2 control-label">Select Country :</label>
+                <label for="countryName" class="col-sm-2 control-label">Country :</label>
                 <div class="col-sm-10">
-                    <select name="countryName" id="" style="padding: 9px; background:#edf2ff; border:1px solid grey">
+                    <select name="countryName" id="countryName" style="padding: 9px; background:#edf2ff; border:1px solid grey">
                         <option value="" disabled>-- Select Country --</option>
 
                         <?php
 
-                            $id = $_GET['id'];
-
                             $connection = openDatabaseConnection();
 
-                            $query = "select distinct id,country_name from country";
+                            $query = "select id,country_name from country";
 
                             $result = mysqli_query($connection,$query);
 
@@ -98,7 +88,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-6 col-sm-10">
-                    <input type="submit" value="Update State" class="btn btn-primary" name="submit" />
+                    <input type="submit" value="Update State" class="btn btn-primary" name="submit" id="updateData"/>
                 </div>
             </div>
         </form>

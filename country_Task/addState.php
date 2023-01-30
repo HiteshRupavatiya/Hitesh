@@ -1,8 +1,6 @@
 <?php
-    if(isset($_POST['submit'])){
-        $post = $_POST;
-        $stateName = $post['stateName'];
-        $countryName = $post['countryName'];
+        $stateName = $_POST['stateName'];
+        $countryName = $_POST['countryName'];
         
         include('databaseConnection.php');
 
@@ -12,17 +10,6 @@
 
         $result = mysqli_query($connection,$query);
 
-        if($result){
-            header('location: stateIndex.php');
-        }
-        else{
-            echo $connection->error;
-        }
-
         closeDatabaseConnection($connection);
-        
-    }
-    else{
-        echo $connection->error;
-    }
+
 ?>
